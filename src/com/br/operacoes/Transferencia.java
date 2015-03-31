@@ -10,9 +10,6 @@ import javax.servlet.http.HttpSession;
 import com.br.dao.ContaDao;
 import com.br.model.Conta;
 
-/**
- * Servlet implementation class TransferenciaServlet
- */
 
 public class Transferencia implements Command {
        
@@ -33,6 +30,7 @@ public class Transferencia implements Command {
 		Conta conta2 = new Conta();
 		conta2.setCc(ccdestino);
 		int credito,debito = 0;
+		int bonus = (int) Math.floor(valor/10);
 		
 		String redirecionar = "";
 		
@@ -45,6 +43,7 @@ public class Transferencia implements Command {
 				debito = qtdSaldo2 + valor;
 				conta2.setValor(debito);
 				conta.setValor(credito);
+				conta.setBonus(bonus);
 				contadao.Saque(conta);
 				contadao.Debitar(conta2);
 				response.setContentType("text/html");

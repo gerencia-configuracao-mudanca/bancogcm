@@ -1,5 +1,4 @@
 <%@page import="com.br.model.Conta"%>
-<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <jsp:useBean id="beanLogin" class="com.br.model.Conta"></jsp:useBean>
@@ -42,7 +41,7 @@
 		<table>
 		
 		<tr> 
-		<td>  Seu Bonus é : <%= numero.toString() %> 
+		<td>  Seu Bonus é : <%= numero.toString() %>. Continue usando nossos serviços e acumule bônus. 
 		
 		
 		</td>

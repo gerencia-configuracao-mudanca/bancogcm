@@ -45,12 +45,13 @@
 
 	Crédito no valor <%= valor.toString() %>	
 	para a conta 
-	<%= cc.toString() %> 
+	<%= cc.toString() %>
 	realizado com sucesso.<a>
 	
 	Bônus de <%= bonus.toString() %>
 	creditado.
 	</a> 		
+
 		<div class="button">
 		</div><!-- button -->
 	</section><!-- content -->

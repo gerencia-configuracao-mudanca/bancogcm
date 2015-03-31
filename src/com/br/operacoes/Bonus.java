@@ -26,17 +26,16 @@ public class Bonus implements Command {
     
 		public String execute(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {
-			Object nome = new Object();
 			Integer qtd = new Integer(0);
 			try{
 				Conta conta = new Conta();
 				//Usuario usuario = new Usuario();
 				HttpSession sessao = request.getSession();
-				nome = sessao.getAttribute("cc");
-				conta.setCc(nome.toString());
+				String numconta = String.valueOf(sessao.getAttribute("cc"));
+				conta.setCc(numconta);
 				//usuario.setUsuario(nome.toString());
 				ContaDao contadao = new ContaDao();
-				qtd = contadao.Bonus(conta);
+				qtd = contadao.Bonus(numconta);
 				//UsuarioDao usuariodao = new UsuarioDao();
 				//qtd = usuariodao.Saldo(usuario);
 				System.out.println(qtd);

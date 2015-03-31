@@ -12,10 +12,6 @@ import javax.servlet.http.HttpSession;
 import com.br.dao.ContaDao;
 import com.br.model.Conta;
 
-/**
- * Servlet implementation class saldoServlet
- */
-
 public class Saldo implements Command {
        
    

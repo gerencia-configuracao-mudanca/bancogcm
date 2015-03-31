@@ -1,0 +1,1 @@
+ALTER TABLE conta3 ADD bonus INTEGER;
