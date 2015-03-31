@@ -72,26 +72,22 @@ public class ContaDao implements ContaInterface{
 	}	
 
 	@Override
-	public int Bonus(Conta conta) {
+	public int Bonus(String conta) {
 		ResultSet rs;
-		int saldo = 0;
-		int divisor = 10;
-		int resultado =0;
-		String sql = "SELECT conta3.valor FROM usuarios3 INNER JOIN conta3 on usuarios3.id_usuario = conta3.id_conta WHERE conta3.cc='"+conta.getCc()+"';";
+		int bonus = 0;
+		String sql = "SELECT FROM conta3 WHERE conta3.cc = "+conta+";";
 		try{
 			java.sql.Statement st = connection.createStatement();
 			rs = st.executeQuery(sql);
 			while(rs.next()){
-				saldo = rs.getInt("valor");
-				resultado = (int) saldo / divisor;
-				//System.out.println(valor2);
+				bonus = rs.getInt("bonus");
 			}
-			System.out.println("Bonus igual a: " + resultado);
+			System.out.println("Bonus igual a: " + bonus);
 			//rs.close();
 		}catch(SQLException erro){
 			throw new RuntimeException(erro);
 		}
-		return resultado;
+		return bonus;
 	}
 	
 	
@@ -119,5 +115,6 @@ public class ContaDao implements ContaInterface{
 
 		}
 	}
+	
 	
 }

@@ -42,7 +42,7 @@
 		<table>
 		
 		<tr> 
-		<td>  Seu Bonus é : <%= numero.toString() %> 
+		<td>  Seu Bonus é : <%= numero.toString() %>. Continue usando nossos serviços e acumule bônus. 
 		
 		
 		</td>
