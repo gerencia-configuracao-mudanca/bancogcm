@@ -7,6 +7,7 @@ public class Conta {
 	private String cc;
 	private int valor;
 	private int id_conta;
+	private int bonus;
 	
 	public int getId_conta() {
 		return id_conta;
@@ -32,6 +33,11 @@ public class Conta {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
-	
+	public int getBonus() {
+		return bonus;
+	}
+	public void setBonus(int valor) {
+		this.bonus = valor;
+	}
 
 }

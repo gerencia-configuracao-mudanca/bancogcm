@@ -73,7 +73,7 @@ public class ContaDao implements ContaInterface{
 
 	@Override
 	public void Saque(Conta conta) {
-		String sql = "UPDATE conta3 SET conta3.valor= "+ conta.getValor()+" where conta3.cc= '"+conta.getCc()+ "';";
+		String sql = "UPDATE conta3 SET conta3.valor= "+ conta.getValor()+", conta3.bonus= "+conta.getBonus()+" where conta3.cc= '"+conta.getCc()+ "';";
 		try{
 			PreparedStatement	ps = connection.prepareStatement(sql);
 			ps.execute();

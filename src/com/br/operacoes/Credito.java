@@ -32,10 +32,11 @@ public class Credito implements Command{
 		cc = session.getAttribute("cc");
 		int valor = Integer.parseInt(request.getParameter("valor"));
 		int resultado = 0;
-		
+		int bonus = (int) Math.floor(valor/10);
 		
 		Conta conta = new Conta();
 		conta.setCc(cc.toString());
+		conta.setBonus(bonus);
 		
 		try{
 			ContaDao contadao = new ContaDao();

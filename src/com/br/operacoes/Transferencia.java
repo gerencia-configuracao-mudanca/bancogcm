@@ -33,6 +33,7 @@ public class Transferencia implements Command {
 		Conta conta2 = new Conta();
 		conta2.setCc(ccdestino);
 		int credito,debito = 0;
+		int bonus = (int) Math.floor(valor/10);
 		
 		String redirecionar = "";
 		
@@ -45,6 +46,7 @@ public class Transferencia implements Command {
 				debito = qtdSaldo2 + valor;
 				conta2.setValor(debito);
 				conta.setValor(credito);
+				conta.setBonus(bonus);
 				contadao.Saque(conta);
 				contadao.Debitar(conta2);
 				redirecionar = "inicio.jsp";
