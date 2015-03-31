@@ -43,7 +43,7 @@
 <%Object cc =  session.getAttribute("cc"); %>
 
 
-	Débito no valor de <%= valor.toString() %>	
+	Débito no valor <%= valor.toString() %>	
 	para a conta 
 	<%= cc.toString() %> 
 	realizado com sucesso		

@@ -47,7 +47,10 @@ public class Transferencia implements Command {
 				conta.setValor(credito);
 				contadao.Saque(conta);
 				contadao.Debitar(conta2);
-				redirecionar = "inicio.jsp";
+				response.setContentType("text/html");
+				session.setAttribute("valorTranferido", valor);
+				session.setAttribute("contaDestino", ccdestino);
+				redirecionar = "transferencia2.jsp";
 			}else{
 				redirecionar = "saldo_insuficiente.jsp";
 			}

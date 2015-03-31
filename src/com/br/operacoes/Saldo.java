@@ -48,7 +48,7 @@ public class Saldo implements Command {
 				e.printStackTrace();
 			}
 			
-			return "saldo2.jsp";
+			return "saldo.jsp";
 
 		}
 	

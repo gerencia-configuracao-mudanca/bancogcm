@@ -39,11 +39,11 @@
     
     
 </ol>
-<%Object valor =  session.getAttribute("valorCredito"); %>
-<%Object cc =  session.getAttribute("cc"); %>
+<%Object valor =  session.getAttribute("valorTranferido"); %>
+<%Object cc =  session.getAttribute("contaDestino"); %>
 
 
-	Crédito no valor <%= valor.toString() %>	
+	Tranferencia no valor <%= valor.toString() %>	
 	para a conta 
 	<%= cc.toString() %> 
 	realizado com sucesso		
