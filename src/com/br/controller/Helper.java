@@ -42,6 +42,11 @@ public class Helper {
 		if (cmd.equals("cadastroUsuario")) {
 			comando = new CadastroUsuario();
 		}
+		if (cmd.equals("bonus")) {
+			comando = new Bonus();
+		}
+		
+		
 		
 		return comando;
 	}
