@@ -40,12 +40,17 @@ public class Debito implements Command {
 
 				conta.setValor(resultado);
 				contadao.Saque(conta);
-				pagina = "inicio.jsp";
+				pagina = "debito.jsp";
+				response.setContentType("text/html");
+				session.setAttribute("valorDebito", valor);
 				//response.sendRedirect("inicio.jsp");
 			}else{
 				pagina = "saldo_insuficiente.jsp";
 				//response.sendRedirect("saldoInsuficiente.jsp");
 			}
+			
+			
+			
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
