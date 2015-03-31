@@ -10,9 +10,6 @@ import javax.servlet.http.HttpSession;
 import com.br.dao.ContaDao;
 import com.br.model.Conta;
 
-/**
- * Servlet implementation class TransferenciaServlet
- */
 
 public class Transferencia implements Command {
        
