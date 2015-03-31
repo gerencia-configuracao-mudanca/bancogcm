@@ -41,12 +41,17 @@
 </ol>
 <%Object valor =  session.getAttribute("valorCredito"); %>
 <%Object cc =  session.getAttribute("cc"); %>
-
+<%Object bonus =  session.getAttribute("saveBonus"); %>
 
 	Crédito no valor <%= valor.toString() %>	
 	para a conta 
-	<%= cc.toString() %> 
-	realizado com sucesso		
+	<%= cc.toString() %>
+	realizado com sucesso.<a>
+	
+	Bônus de <%= bonus.toString() %>
+	creditado.
+	</a> 		
+
 		<div class="button">
 		</div><!-- button -->
 	</section><!-- content -->
