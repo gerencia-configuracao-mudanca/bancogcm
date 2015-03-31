@@ -30,7 +30,7 @@ public class Transferencia implements Command {
 		Conta conta2 = new Conta();
 		conta2.setCc(ccdestino);
 		int credito,debito = 0;
-		int bonus = (int) Math.floor(valor/10);
+		int bonus = (int) Math.floor(valor * 0.5);
 		
 		String redirecionar = "";
 		

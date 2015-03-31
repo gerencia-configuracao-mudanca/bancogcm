@@ -32,7 +32,7 @@ public class Credito implements Command{
 		cc = session.getAttribute("cc");
 		int valor = Integer.parseInt(request.getParameter("valor"));
 		int resultado = 0;
-		int bonus = (int) Math.floor(valor/10);
+		int bonus = (int) Math.floor(valor * 0.5);
 		int valor_bonus_atual = 0;
 		valor_bonus_atual = (int)session.getAttribute("saveBonus"); 
 		
