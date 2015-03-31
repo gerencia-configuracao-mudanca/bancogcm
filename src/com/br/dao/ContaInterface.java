@@ -18,4 +18,6 @@ public interface ContaInterface {
 
 	int Saldo(Conta conta);
 
+	int Bonus(Conta conta);
+
 }
