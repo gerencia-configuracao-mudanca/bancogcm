@@ -75,7 +75,7 @@ public class ContaDao implements ContaInterface{
 	public int Bonus(String conta) {
 		ResultSet rs;
 		int bonus = 0;
-		String sql = "SELECT FROM conta3 WHERE conta3.cc = "+conta+";";
+		String sql = "SELECT conta3.bonus FROM conta3 WHERE conta3.cc = "+conta;
 		try{
 			java.sql.Statement st = connection.createStatement();
 			rs = st.executeQuery(sql);

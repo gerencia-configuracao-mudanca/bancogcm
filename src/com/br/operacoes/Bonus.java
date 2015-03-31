@@ -31,7 +31,8 @@ public class Bonus implements Command {
 				Conta conta = new Conta();
 				//Usuario usuario = new Usuario();
 				HttpSession sessao = request.getSession();
-				String numconta = String.valueOf(sessao.getAttribute("cc"));
+				String numconta = "";
+				numconta = String.valueOf(sessao.getAttribute("cc"));
 				conta.setCc(numconta);
 				//usuario.setUsuario(nome.toString());
 				ContaDao contadao = new ContaDao();
