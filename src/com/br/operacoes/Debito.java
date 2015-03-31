@@ -39,7 +39,7 @@ public class Debito implements Command {
 				resultado = qtdSaldo - valor;
 
 				conta.setValor(resultado);
-				contadao.Saque(conta);
+				contadao.Debitar(conta);
 				pagina = "debito.jsp";
 				response.setContentType("text/html");
 				session.setAttribute("valorDebito", valor);

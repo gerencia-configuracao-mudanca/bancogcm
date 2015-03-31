@@ -43,7 +43,7 @@ public class Transferencia implements Command {
 				debito = qtdSaldo2 + valor;
 				conta2.setValor(debito);
 				conta.setValor(credito);
-				conta.setBonus(bonus);
+				conta2.setBonus(bonus);
 				contadao.Saque(conta);
 				contadao.Debitar(conta2);
 				response.setContentType("text/html");
