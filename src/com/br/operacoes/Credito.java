@@ -13,7 +13,7 @@ import com.br.model.Conta;
  */
 
 public class Credito implements Command{
-
+	
 	
 	public Credito() {
 		super();
@@ -26,10 +26,13 @@ public class Credito implements Command{
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		Object cc = new Object();
+		Object valorCredito = new Object();
 		HttpSession session = request.getSession();
+		//valorCredito = request.getAttribute("valor");
 		cc = session.getAttribute("cc");
 		int valor = Integer.parseInt(request.getParameter("valor"));
 		int resultado = 0;
+		
 		
 		Conta conta = new Conta();
 		conta.setCc(cc.toString());
@@ -42,12 +45,13 @@ public class Credito implements Command{
 
 			conta.setValor(resultado);
 			contadao.Saque(conta);
-
+			response.setContentType("text/html");
+			session.setAttribute("valorCredito", valor);
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
 		
-		return "inicio.jsp";
+		return "credito.jsp";
 
 	}
 
