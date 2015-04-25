@@ -75,7 +75,7 @@ public class ContaDao implements ContaInterface{
 	public int Bonus(String conta) {
 		ResultSet rs;
 		int bonus = 0;
-		String sql = "SELECT FROM conta3 WHERE conta3.cc = "+conta+";";
+		String sql = "SELECT bonus FROM conta3 WHERE conta3.cc = "+conta+";";
 		try{
 			java.sql.Statement st = connection.createStatement();
 			rs = st.executeQuery(sql);
@@ -92,7 +92,7 @@ public class ContaDao implements ContaInterface{
 	
 	
 	@Override
-	public void Saque(Conta conta) {
+	public void Creditar(Conta conta) {
 		String sql = "UPDATE conta3 SET conta3.valor= "+ conta.getValor()+", conta3.bonus= "+conta.getBonus()+" where conta3.cc= '"+conta.getCc()+ "';";
 		try{
 			PreparedStatement	ps = connection.prepareStatement(sql);
