@@ -41,7 +41,7 @@ public class Debito implements Command {
 				conta.setValor(resultado);
 				contadao.Debitar(conta);
 				
-				mensagem = "Débito no valor " + valor + " para a conta " + cc + " realizado com sucesso";
+				mensagem = "Desricao da operacao: Debito no valor " + valor + " para a conta " + cc + " realizado com sucesso";
 				response.setContentType("text/html");
 				session.setAttribute("mensagemDebito", mensagem);
 				session.setAttribute("valorDebito", valor);
