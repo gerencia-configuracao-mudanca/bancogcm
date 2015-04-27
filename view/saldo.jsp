@@ -42,8 +42,12 @@
 		<table>
 		
 		<tr> 
-		<td>  Seu Saldo é : <%= numero.toString() %> 
-		
+		<td>  Seu Saldo é : <%if(numero != null){ %>  
+		<%= numero.toString() %> 
+			<%}
+	else {%>
+			
+			<%}%>
 		
 		</td>
 		</tr>
