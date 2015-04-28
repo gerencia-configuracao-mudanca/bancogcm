@@ -29,10 +29,10 @@ public class Credito implements Command{
 		HttpSession session = request.getSession();
 		//valorCredito = request.getAttribute("valor");
 		cc = session.getAttribute("cc");
-		int valor = Integer.parseInt(request.getParameter("valor"));
-		int resultado = 0;
-		int bonus_atual = 0;
-		int bonus = (int) Math.floor(valor/10);
+		float valor = Integer.parseInt(request.getParameter("valor"));
+		float resultado = 0;
+		float bonus_atual = 0;
+		float bonus = (float) Math.floor(valor/10);
 		String mensagem = "";
 		
 		
@@ -43,7 +43,7 @@ public class Credito implements Command{
 			conta.setCc(cc.toString());
 			conta.setBonus(bonus_atual + bonus);
 			
-			int qtdSaldo = contadao.Saldo(conta);
+			float qtdSaldo = contadao.Saldo(conta);
 
 			resultado = qtdSaldo + valor;
 			conta.setValor(resultado);

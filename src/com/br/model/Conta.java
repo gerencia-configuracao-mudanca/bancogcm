@@ -5,9 +5,9 @@ public class Conta {
 	
 	private int ag;
 	private String cc;
-	private int valor;
+	private float valor;
 	private int id_conta;
-	private int bonus;
+	private float bonus;
 	
 	public int getId_conta() {
 		return id_conta;
@@ -27,16 +27,16 @@ public class Conta {
 	public void setCc(String cc) {
 		this.cc = cc;
 	}
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	public int getBonus() {
+	public float getBonus() {
 		return bonus;
 	}
-	public void setBonus(int valor) {
+	public void setBonus(float valor) {
 		this.bonus = valor;
 	}
 

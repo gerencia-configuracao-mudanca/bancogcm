@@ -14,9 +14,9 @@ public interface ContaInterface {
 
 	void Debitar(Conta conta);
 
-	int Saldo(Conta conta);
+	float Saldo(Conta conta);
 
-	int Bonus(String conta);
+	float Bonus(String conta);
 
 	void Creditar(Conta conta);
 

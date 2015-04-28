@@ -28,13 +28,13 @@ public class Debito implements Command {
 		//nome = session.getAttribute("nome");
 		cc = session.getAttribute("cc");
 		int valor = Integer.parseInt(request.getParameter("valor"));
-		int resultado = 0;
+		float resultado = 0;
 		String mensagem = "";
 		Conta conta = new Conta();
 		conta.setCc(cc.toString());
 		try{
 			ContaDao contadao = new ContaDao();
-			int qtdSaldo = contadao.Saldo(conta);
+			float qtdSaldo = contadao.Saldo(conta);
 			if(qtdSaldo >= valor & qtdSaldo > 1){
 				resultado = qtdSaldo - valor;
 

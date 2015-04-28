@@ -28,17 +28,17 @@ public class Transferencia implements Command {
 		conta_ser_debitada.setCc(numero_conta_ser_debitada.toString());
 		Conta conta_ser_creditada = new Conta();
 		conta_ser_creditada.setCc(numero_conta_ser_creditada);
-		int credito,debito = 0;
-		int bonus_credito = (int) Math.floor(valor_transferencia/10);
+		float credito,debito = 0;
+		float bonus_credito =  (float) Math.floor(valor_transferencia/10);
 		
 		String redirecionar = "";
 		String mensagem = "";
 		
 		try{
 			ContaDao contadao = new ContaDao();
-			int qtdSaldo = contadao.Saldo(conta_ser_debitada);
-			int qtdSaldo2 = contadao.Saldo(conta_ser_creditada);
-			int bonus_atual = contadao.Bonus(numero_conta_ser_creditada);
+			float qtdSaldo = contadao.Saldo(conta_ser_debitada);
+			float qtdSaldo2 = contadao.Saldo(conta_ser_creditada);
+			float bonus_atual = contadao.Bonus(numero_conta_ser_creditada);
 			
 			/*  Verificar se a conta tem saldo */
 	
