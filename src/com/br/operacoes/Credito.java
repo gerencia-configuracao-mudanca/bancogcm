@@ -35,7 +35,6 @@ public class Credito implements Command{
 		int bonus = (int) Math.floor(valor/10);
 		String mensagem = "";
 		
-		
 		try{
 			ContaDao contadao = new ContaDao();
 			bonus_atual = contadao.Bonus(cc.toString());
