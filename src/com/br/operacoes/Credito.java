@@ -33,10 +33,9 @@ public class Credito implements Command{
 		float resultado = 0;
 		float bonus_atual = 0;
 		float bonus = (float) Math.floor(valor * 0.03);
-		Object tc =  new Object();
-		tc = session.getAttribute("tc");
+		float tc = 0;
 		
-		//tipo_conta = tc.toString();
+		
 		
 		String mensagem = "";
 		
@@ -44,6 +43,7 @@ public class Credito implements Command{
 			Conta conta = new Conta();
 			ContaDao contadao = new ContaDao();
 			bonus_atual = contadao.Bonus(cc.toString());
+			
 			if(bonus_atual == 0){
 				conta.setBonus(bonus);
 				conta.setCc(cc.toString());
@@ -51,24 +51,30 @@ public class Credito implements Command{
 			conta.setCc(cc.toString());
 			conta.setBonus(bonus_atual + bonus);
 			}
+			tc = contadao.tipo(cc.toString());
 			float qtdSaldo = contadao.Saldo(conta);
-			if(conta.getTipo() == 1){
+			System.out.println("Tipo da conta é: " + tc);
+			if(tc == 1){
 			resultado = qtdSaldo + valor;
 			conta.setValor(resultado);
 			//System.out.println("valor do tipo " + tc.toString());
 			contadao.Creditar(conta);
-			mensagem = "Desricao da operacao: Credito no valor de: " + valor + " para a conta " + cc + " realizado com sucesso";
 			response.setContentType("text/html");
 			session.setAttribute("mensagemCredito", mensagem);
 			session.setAttribute("valorCredito", valor);
-			}else if(conta.getTipo() == 13){
+			}else if(tc == 13){
+				
 				resultado = qtdSaldo + valor;
 				conta.setValor(resultado);
 				//System.out.println("valor do tipo " + tc.toString());
 				contadao.Creditar(conta);
+				mensagem = "Desricao da operacao: Credito no valor de: " + valor + " para a conta " + cc + " realizado com sucesso";
+
 				response.setContentType("text/html");
 				session.setAttribute("mensagemCredito", mensagem);
 				session.setAttribute("valorCredito", valor);
+			}else{
+				
 			}
 			
 			

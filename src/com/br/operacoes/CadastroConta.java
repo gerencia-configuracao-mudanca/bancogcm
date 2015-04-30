@@ -51,7 +51,7 @@ public class CadastroConta implements Command {
 			ContaDao contadao = new ContaDao();
 			contadao.adicionarConta(conta);
 			session.setAttribute("tc", tipo_conta);
-			session.setAttribute("savenumeroconta", cc);
+			//session.setAttribute("savenumeroconta", cc);
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
