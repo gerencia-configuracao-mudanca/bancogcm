@@ -53,9 +53,9 @@ public class ContaDao implements ContaInterface{
 	
 
 	@Override
-	public float Saldo(Conta conta) {
+	public int Saldo(Conta conta) {
 		ResultSet rs;
-		float valor2 = 0;
+		int valor2 = 0;
 		String sql = "SELECT conta3.valor FROM usuarios3 INNER JOIN conta3 on usuarios3.id_usuario = conta3.id_conta WHERE conta3.cc='"+conta.getCc()+"';";
 		try{
 			java.sql.Statement st = connection.createStatement();
@@ -72,10 +72,10 @@ public class ContaDao implements ContaInterface{
 	}	
 
 	@Override
-	public float Bonus(String conta) {
+	public int Bonus(String conta) {
 		ResultSet rs;
-		float bonus = 0;
-		String sql = "SELECT bonus FROM conta3 WHERE conta3.cc = "+conta+";";
+		int bonus = 0;
+		String sql = "SELECT FROM conta3 WHERE conta3.cc = "+conta+";";
 		try{
 			java.sql.Statement st = connection.createStatement();
 			rs = st.executeQuery(sql);
@@ -92,7 +92,7 @@ public class ContaDao implements ContaInterface{
 	
 	
 	@Override
-	public void Creditar(Conta conta) {
+	public void Saque(Conta conta) {
 		String sql = "UPDATE conta3 SET conta3.valor= "+ conta.getValor()+", conta3.bonus= "+conta.getBonus()+" where conta3.cc= '"+conta.getCc()+ "';";
 		try{
 			PreparedStatement	ps = connection.prepareStatement(sql);

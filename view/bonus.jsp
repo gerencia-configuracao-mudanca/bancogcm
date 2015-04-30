@@ -37,19 +37,10 @@
 	</div>
 	<%Object numero =  session.getAttribute("saveBonus"); %>
 	
-	
-
-		<table>
+			<table>
 		
 		<tr> 
-		<td>  Seu Bonus é : 
-		
-		<%if(numero != null){ %> 
-				<%= numero.toString() %>. Continue usando nossos serviços e acumule bônus. 
-		<%}
-	else {%>
-			
-			<%}%>
+		<td>  Seu Bonus é : <%= numero.toString() %>. Continue usando nossos serviços e acumule bônus. 
 		
 		
 		</td>

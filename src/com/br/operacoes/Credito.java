@@ -15,48 +15,47 @@ import com.br.model.Conta;
 public class Credito implements Command{
 	
 	
-	public Credito() {
+	public Credito() {	
 		super();
 	}
-
+	
 
 
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
-
+		// TODO Auto-generated method stub
 		Object cc = new Object();
-
+		Object valorCredito = new Object();
 		HttpSession session = request.getSession();
 		//valorCredito = request.getAttribute("valor");
 		cc = session.getAttribute("cc");
+
 		float valor = Integer.parseInt(request.getParameter("valor"));
 		float resultado = 0;
 		float bonus_atual = 0;
 		float bonus = (float) Math.floor( valor * 0.03 );
 		String mensagem = "";
+
 		
+		Conta conta = new Conta();
+		conta.setCc(cc.toString());
+		conta.setBonus(bonus);
+	
 		try{
 			ContaDao contadao = new ContaDao();
-			bonus_atual = contadao.Bonus(cc.toString());
-			Conta conta = new Conta();
-			conta.setCc(cc.toString());
-			conta.setBonus(bonus_atual + bonus);
-			
-			float qtdSaldo = contadao.Saldo(conta);
+			int qtdSaldo = contadao.Saldo(conta);
 
 			resultado = qtdSaldo + valor;
-			conta.setValor(resultado);
-			contadao.Creditar(conta);
 
-			mensagem = "Desricao da operacao: Credito no valor de: " + valor + " para a conta " + cc + " realizado com sucesso";
+			conta.setValor(resultado);
+			contadao.Saque(conta);
 			response.setContentType("text/html");
-			session.setAttribute("mensagemCredito", mensagem);
 			session.setAttribute("valorCredito", valor);
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
 		
-		return "creditar.jsp";
+		return "credito.jsp";
 
 	}
 
