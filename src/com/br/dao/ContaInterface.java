@@ -20,4 +20,6 @@ public interface ContaInterface {
 
 	void Creditar(Conta conta);
 
+	float tipo(String conta);
+
 }

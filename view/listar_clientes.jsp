@@ -43,7 +43,7 @@
 		<td> Numero da Agencia</td>
 		<td> Numero da Conta</td>
 		<td> Saldo</td>
-		<td> Nome do dono da conta</td>
+		<td> Nome Cliente</td>
 		</tr>
 		
 		<%while(result.next()){

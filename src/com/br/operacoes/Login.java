@@ -39,6 +39,7 @@ public class Login implements Command {
 		Usuario usuario = new Usuario();
 		usuario.setUsuario(nome);
 		usuario.setSenha(senha);
+		
 		try {
 			UsuarioDao usuarioDAO = new UsuarioDao();
 			if(usuarioDAO.AutenticarUsuario(usuario) == true){
@@ -51,6 +52,7 @@ public class Login implements Command {
 				HttpSession sessao = request.getSession();
 				//saldo = sessao.getAttribute("saveSaldo");
 				//sessao.setAttribute("saldo", saldo);
+				
 				sessao.setAttribute("cc", cc);
 				sessao.setAttribute("nome", nome);
 				sessao.setAttribute("id_usuario", id_usuario);
