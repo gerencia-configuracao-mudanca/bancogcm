@@ -2,7 +2,6 @@ package com.br.operacoes;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,19 +29,23 @@ public class Debito implements Command {
 		cc = session.getAttribute("cc");
 		int valor = Integer.parseInt(request.getParameter("valor"));
 		int resultado = 0;
+		String mensagem = "";
 		Conta conta = new Conta();
 		conta.setCc(cc.toString());
 		try{
 			ContaDao contadao = new ContaDao();
 			int qtdSaldo = contadao.Saldo(conta);
-			if(qtdSaldo >= valor){
+			if(qtdSaldo >= valor & qtdSaldo > 1){
 				resultado = qtdSaldo - valor;
 
 				conta.setValor(resultado);
-				contadao.Saque(conta);
-				pagina = "debito.jsp";
+				contadao.Debitar(conta);
+				
+				mensagem = "Desricao da operacao: Debito no valor " + valor + " para a conta " + cc + " realizado com sucesso";
 				response.setContentType("text/html");
+				session.setAttribute("mensagemDebito", mensagem);
 				session.setAttribute("valorDebito", valor);
+				pagina = "debitar.jsp";
 				//response.sendRedirect("inicio.jsp");
 			}else{
 				pagina = "saldo_insuficiente.jsp";
