@@ -1,3 +1,4 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="beanLogin" class="com.br.model.Usuario"></jsp:useBean>
@@ -15,32 +16,74 @@
 <meta charset="utf-8">
 <title>Paper Stack</title>
 <link rel="stylesheet" type="text/css" href="./design/css/style.css" />
+<link rel="stylesheet" type="text/css" href="./design/css/estilo.css" />
+
 </head>
 <body>
+
+
 	<div class="container">
 		<section id="content">
-			<form name="formConta" method="post" action="Controller">
-		<input type="hidden" id="cmd" required  name="cmd" value="transferencia"/>
+			<ol id="toc">
+				<li><a href="inicio.jsp">Home</a></li>
+				<li>
+					<form action="Controller" method="post">
+						<a href="saldo.jsp" onclick="parentNode.submit();">Saldo</a> <input
+							type="hidden" id="cmd" required name="cmd" value="saldo" />
+					</form>
+				</li>
+				<li class="current"><a href="creditar.jsp">Crédito</a></li>
+				<li><a href="transferencia.jsp">Transferencia</a></li>
+				<li><a href="debitar.jsp">Debitar</a></li>
+				<li>
+					<form action="Controller" method="post">
+						<a href="bonus.jsp" onclick="parentNode.submit();">Bonus</a> <input
+							type="hidden" id="cmd" required name="cmd" value="bonus" />
+					</form>
+				</li>
 
+
+			</ol>
+
+
+
+			<%Object valor =  session.getAttribute("transferencia"); %>
+			<%Object cc =  session.getAttribute("cc"); %>
+
+			<%if(valor != null){ %>
+
+			<%= valor.toString() %>
+
+			<%}
+	else {%>
+
+			<%}%>
+
+
+
+			<form name="formConta" method="post" action="Controller">
+
+				<input type="hidden" id="cmd" required name="cmd"
+					value="transferencia" />
 				<div>
 					<input type="text" name="cc" placeholder="Numero de sua Conta"><br>
+				</div>
+				<div>
+					<input type="text" name="valor"
+						placeholder="Quantidade de dinheiro a ser creditado"><br>
+				</div>
+				<div>
+
+					<input type="submit" id="enviar" value="Enviar">
+
 
 				</div>
-				<div>
-					<input type="text" name="valor" placeholder="Quantidade de dinheiro"><br>
-				</div>
-				
-				
-				<div>
-					<input type="submit" id="enviar" value="Enviar">
-					
-					  
-				</div>
-				
+
 			</form>
-			<!-- form -->
-			<div class="button">
-			</div>
+
+
+
+			<div class="button"></div>
 			<!-- button -->
 		</section>
 		<!-- content -->
