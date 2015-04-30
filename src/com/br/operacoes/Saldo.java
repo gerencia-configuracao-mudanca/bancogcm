@@ -1,9 +1,7 @@
 package com.br.operacoes;
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,7 +21,7 @@ public class Saldo implements Command {
 		public String execute(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {
 			Object nome = new Object();
-			Integer qtd = new Integer(0);
+			float qtd = 0;
 			try{
 				Conta conta = new Conta();
 				//Usuario usuario = new Usuario();

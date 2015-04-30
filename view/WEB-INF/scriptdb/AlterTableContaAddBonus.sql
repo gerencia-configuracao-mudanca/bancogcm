@@ -1,1 +1,1 @@
-ALTER TABLE conta3 ADD bonus INTEGER;
+ALTER TABLE conta3 ADD bonus float;
