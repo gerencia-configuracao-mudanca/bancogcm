@@ -37,7 +37,7 @@ public class Credito implements Command{
 		Conta conta = new Conta();
 		conta.setCc(cc.toString());
 		conta.setBonus(bonus);
-		
+	
 		try{
 			ContaDao contadao = new ContaDao();
 			int qtdSaldo = contadao.Saldo(conta);
