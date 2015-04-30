@@ -34,6 +34,10 @@
 
 				</div>
 				<div>
+					<input type="text" required name="tc" placeholder="Tipo da Conta"><br>
+
+				</div>
+				<div>
 					<input type="text" required name="valor" placeholder="Quantidade de dinheiro"><br>
 				</div>
 				<div>

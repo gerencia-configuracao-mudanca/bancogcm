@@ -36,7 +36,7 @@ public class Bonus implements Command {
 				qtd = contadao.Bonus(numconta);
 				//UsuarioDao usuariodao = new UsuarioDao();
 				//qtd = usuariodao.Saldo(usuario);
-				System.out.println(qtd);
+				//System.out.println(qtd);
 				response.setContentType("text/html");
 				sessao.setAttribute("saveBonus", qtd);
 				//RequestDispatcher dispatcher = request.getRequestDispatcher("saldo2.jsp");

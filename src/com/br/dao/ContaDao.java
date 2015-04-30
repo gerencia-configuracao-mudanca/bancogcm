@@ -21,13 +21,14 @@ public class ContaDao implements ContaInterface{
 
 	@Override
 	public void adicionarConta(Conta conta) {
-		String sql = "INSERT INTO conta3 (ag,cc,valor,id_conta) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO conta3 (ag,cc,valor,id_conta, tipo) VALUES (?,?,?,?,?)";
 		try{
 			PreparedStatement ps = connection.prepareStatement(sql);			
 			ps.setLong(1, conta.getAg());
 			ps.setString(2, conta.getCc());
 			ps.setFloat(3, conta.getValor());
 			ps.setLong(4, conta.getId_conta());
+			ps.setFloat(5, conta.getTipo());
 			ps.execute();
 			ps.close();
 		}catch(SQLException erro){
@@ -40,7 +41,7 @@ public class ContaDao implements ContaInterface{
 	@Override
 	public ResultSet ListarUsuario() {
 		ResultSet rs;
-		String sql = "SELECT conta3.ag, conta3.cc, conta3.valor, usuarios3.nome	FROM usuarios3 INNER JOIN conta3 on conta3.id_conta = usuarios3.id_usuario";
+		String sql = "SELECT conta3.ag, conta3.cc, conta3.valor, conta3.tipo, usuarios3.nome	FROM usuarios3 INNER JOIN conta3 on conta3.id_conta = usuarios3.id_usuario";
 		try{
 			PreparedStatement	ps = connection.prepareStatement(sql);
 			rs = ps.executeQuery(sql);
