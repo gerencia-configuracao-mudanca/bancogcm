@@ -48,6 +48,7 @@ public class Credito implements Command{
 			resultado = qtdSaldo + valor;
 			conta.setValor(resultado);
 			contadao.Creditar(conta);
+			// messagem de crédito
 			mensagem = "Credito no valor de: " + valor + " para a conta " + cc + " realizado com sucesso";
 			response.setContentType("text/html");
 			session.setAttribute("mensagemCredito", mensagem);
