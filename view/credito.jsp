@@ -19,35 +19,34 @@
 <body>
 
 
+
+
 <div class="container">
 	<section id="content">
 		
 	
-	
-	
-				<form name="formConta" method="post" action="Controller">
-
-			<input type="hidden" id="cmd" required  name="cmd" value="Creditar"/>
-				<div>
-					<input type="text" name="valor" placeholder="Quantidade de dinheiro a ser creditado"><br>
-				</div>
-				<div>
-				
-					<input type="submit" id="enviar" value="Enviar">
-					
-				  
-				</div>
-				
-			</form>
-			
-
+	<ol id="toc" >
+    <li><a href="inicio.jsp">Home</a></li>
+    <li>
+    <form action="Controller" method="post">
+        <a href="saldo.jsp" onclick="parentNode.submit();">Saldo</a>
+				<input type="hidden" id="cmd" required  name="cmd" value="saldo"/>
+    </form>
+	</li>
+    <li class="current"><a href="creditar.jsp">Crédito</a></li>
+    <li><a href="transferencia.jsp">Transferencia</a></li>
+    <li><a href="debitar.jsp">Debitar</a></li>
+    
+    
+</ol>
+<%Object valor =  session.getAttribute("valorCredito"); %>
+<%Object cc =  session.getAttribute("cc"); %>
 
 
-
-
-
-
-		
+	Crédito no valor <%= valor.toString() %>	
+	para a conta 
+	<%= cc.toString() %> 
+	realizado com sucesso		
 		<div class="button">
 		</div><!-- button -->
 	</section><!-- content -->
