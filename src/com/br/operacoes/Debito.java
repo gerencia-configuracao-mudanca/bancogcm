@@ -35,7 +35,7 @@ public class Debito implements Command {
 		try{
 			ContaDao contadao = new ContaDao();
 			int qtdSaldo = contadao.Saldo(conta);
-			if(qtdSaldo >= valor){
+			if(qtdSaldo >= valor & qtdSaldo > 1){
 				resultado = qtdSaldo - valor;
 
 				conta.setValor(resultado);
