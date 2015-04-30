@@ -32,7 +32,7 @@ public class Credito implements Command{
 		float valor = Integer.parseInt(request.getParameter("valor"));
 		float resultado = 0;
 		float bonus_atual = 0;
-		float bonus = (float) Math.floor(valor * 0.03);
+		float bonus = (float) Math.floor( valor * 0.03 );
 		String mensagem = "";
 		
 		try{
