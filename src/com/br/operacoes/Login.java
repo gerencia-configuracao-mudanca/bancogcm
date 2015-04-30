@@ -3,8 +3,9 @@ package com.br.operacoes;
 import java.io.IOException;
 
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +18,7 @@ import com.br.model.Usuario;
  */
 //@WebServlet("/LoginServlet")
 public class Login implements Command {
-
+	private static final long serialVersionUID = 1L;
 	String nome = "";
 	String senha = "";
 	String cc = "";
