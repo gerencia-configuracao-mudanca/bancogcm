@@ -20,14 +20,11 @@
 	<div class="container">
 		<section id="content">
 			<form name="formConta" method="post" action="Controller">
-
-
-				<input type="hidden" id="cmd" required  name="cmd" value="cadastroConta"/>
-	
-
+				<input type="hidden" id="cmd" required name="cmd"
+					value="cadastroConta" />
 				<div>
-				
-					<input type="text" required name="ag" placeholder="Numero da Agencia"><br>
+					<input type="text" required name="ag"
+						placeholder="Numero da Agencia"><br>
 				</div>
 				<div>
 					<input type="text" required name="cc" placeholder="Numero da Conta"><br>
@@ -38,7 +35,8 @@
 
 				</div>
 				<div>
-					<input type="text" required name="valor" placeholder="Quantidade de dinheiro"><br>
+					<input type="text" required name="valor"
+						placeholder="Quantidade de dinheiro"><br>
 				</div>
 				<div>
 					<input type="submit" id="enviar" value="Enviar">
