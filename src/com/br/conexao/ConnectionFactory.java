@@ -19,6 +19,7 @@ public class ConnectionFactory {
 		}catch(SQLException erro){
 			throw new RuntimeException(erro);
 		}
+
 	}
 
 	public void fecharConexao(){
