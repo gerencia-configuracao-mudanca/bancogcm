@@ -17,9 +17,8 @@ public class ConnectionFactory {
 			conexao = DriverManager.getConnection(url, usuario, senha);
 			return conexao;
 		}catch(SQLException erro){
-			throw new RuntimeException(erro); 
+			throw new RuntimeException(erro);
 		}
-
 	}
 
 	public void fecharConexao(){
