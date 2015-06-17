@@ -3,5 +3,9 @@ jdk:
  - openjdk7
 script:
  - mvn install -DskipTests=false
- - git commit -a -m "commit do travis para github"
+ #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
+
+deploy:
+  provider: heroku
+  api_key: "4e82f042-5b89-4f7c-bc8e-a226ff524236"
