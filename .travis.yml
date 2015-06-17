@@ -11,7 +11,7 @@ script:
  - git config --global user.name "masterprojectrn"
  - git config --global user.password "gibeongerencia1"
  - git tag -a T%{build_number} -m "criando tag"
- - git push origin --tags
+ - git://github.com/gerencia-configuracao-mudanca/bancogcm.git
 
 deploy:
   provider: heroku
