@@ -3,5 +3,6 @@ language: java
   
   - oraclejdk7
 
-mvn install -DskipTests=false
+script: 
+  - mvn install -DskipTests=false
 
