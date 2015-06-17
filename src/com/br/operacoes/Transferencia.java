@@ -64,7 +64,7 @@ public class Transferencia implements Command {
 				sessao.setAttribute("valormensagemtransferencia", mensagem);
 				redirecionar = "transferencia.jsp";
 			}else{
-				mensagem = "Seu Saldo é Insuficiente tente um valor menor";
+				mensagem = "Seu Saldo eh Insuficiente tente um valor menor";
 				response.setContentType("text/html");
 				sessao.setAttribute("saveSaldo", saldo);
 				sessao.setAttribute("valormensagemtransferencia", mensagem);
