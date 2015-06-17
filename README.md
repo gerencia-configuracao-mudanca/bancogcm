@@ -1,7 +1,6 @@
 # Gerencia_configuracao
 
-[![Build Status](https://travis-ci.org/gerencia-configuracao-mudanca/bancogcm.svg?branch=master)]
-(https://travis-ci.org/gerencia-configuracao-mudanca/bancogcm.svg?branch=master)
+[![Build Status](https://travis-ci.org/gerencia-configuracao-mudanca/bancogcm.svg?branch=master)](https://travis-ci.org/gerencia-configuracao-mudanca/bancogcm)
 
  * Baixe o projeto.
  * Import como projeto maven.
