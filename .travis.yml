@@ -3,8 +3,5 @@ jdk:
  - openjdk7
 script:
  - mvn install -DskipTests=false
- - git config --global user.email "masterprojectrn@yahoo.com.br"
- - git config --global user.name "masterprojectrn"
- - git config --global user.password "gibeongerencia1"
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
