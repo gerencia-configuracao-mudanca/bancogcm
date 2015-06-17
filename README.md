@@ -1,3 +1,5 @@
+https://travis-ci.org/gerencia-configuracao-mudanca/bancogcm.svg
+
 # Gerencia_configuracao
 
  * Baixe o projeto.
