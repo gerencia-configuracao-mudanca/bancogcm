@@ -19,9 +19,6 @@ public class Credito implements Command{
 		super();
 	}
 
-
-
-
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
 
