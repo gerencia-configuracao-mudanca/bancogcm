@@ -1,7 +1,5 @@
-
 language: java
-  
-  - oraclejdk7
-
-mvn install -DskipTests=false
-
+jdk:
+ - openjdk7
+script:
+ - mvn install -DskipTests=false
