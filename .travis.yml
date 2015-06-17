@@ -6,7 +6,7 @@ script:
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
  
-after_script:
+after_success:
  - git config --global user.email "masterprojectrn@yahoo.com.br"
  - git config --global user.name "masterprojectrn"
  - git config --global user.password "gibeongerencia1"
