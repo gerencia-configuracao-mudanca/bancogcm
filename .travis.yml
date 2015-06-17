@@ -10,8 +10,8 @@ after_script:
  - git config --global user.email "masterprojectrn@yahoo.com.br"
  - git config --global user.name "masterprojectrn"
  - git config --global user.password "gibeongerencia1"
- - git tag -a T$TRAVIS_JOB_ID -m "criando tag"
- - git push origin master
+ - git tag -a T"$TRAVIS_JOB_ID" -m "criando tag"
+ - git push origin --tags
 
 deploy:
   provider: heroku
