@@ -5,14 +5,14 @@ script:
  - mvn install -DskipTests=false
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
- 
-after_success:
+
+deploy:
+  provider: heroku
+  api_key: "4e82f042-5b89-4f7c-bc8e-a226ff524236"
+  
+after_deploy: 
  - git config --global user.email "masterprojectrn@yahoo.com.br"
  - git config --global user.name "masterprojectrn"
  - git config --global user.password "gibeongerencia1"
  - git tag -a T1.0 -m "criando tag de teste"
  - git push origin --tags
-
-deploy:
-  provider: heroku
-  api_key: "4e82f042-5b89-4f7c-bc8e-a226ff524236"
