@@ -14,7 +14,7 @@ import com.br.model.Conta;
  * Servlet implementation class saldoServlet
  */
 
-public clas Bonus implements Command {
+public class Bonus implements Command {
 
 
 	public Bonus() {
