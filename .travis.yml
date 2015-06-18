@@ -7,6 +7,11 @@ script:
  - git log origin/master.. --stat
 after_success:
  - git tag -a build_%{build_number}
+notifications: 
+ email: 
+  - ronimour@gmail.com
+  - silastiago@gmail.com
+  - josielmoreira.eng@gmail.com
 deploy:
   provider: heroku
   api_key: "4e82f042-5b89-4f7c-bc8e-a226ff524236"
