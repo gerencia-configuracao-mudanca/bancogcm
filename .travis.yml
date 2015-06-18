@@ -5,6 +5,10 @@ script:
  - mvn install -DskipTests=false
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
+ 
+ after_script:
+  - git commit -a -m "Committed by Travis-CI build number: %{build_number}"
+ 
 
 deploy:
   provider: heroku
