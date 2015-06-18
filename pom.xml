@@ -40,7 +40,16 @@
             <source>1.7</source>
             <target>1.7</target>
         </configuration>
-    </plugin>
+    	</plugin>
+    	<!-- Checkstyle -->
+	<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-checkstyle-plugin</artifactId>
+	    <version>RELEASE</version>
+	<configuration>
+	        <configLocation>src/main/resources/checkstyle.xml</configLocation>                   
+	    </configuration>
+	 </plugin>
     </plugins>
 </build>
 </project>
