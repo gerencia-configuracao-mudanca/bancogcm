@@ -2,7 +2,7 @@ language: java
 jdk:
  - openjdk7
 script:
- - mvn install -DskipTests=false
+ - mvn install -DskipTests=true
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
 after_success:
