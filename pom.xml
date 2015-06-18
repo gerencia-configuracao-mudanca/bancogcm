@@ -32,7 +32,7 @@
 	</dependencies>
 	<build>
     <plugins>
-    	<!-- maven-checkstyle-plugin  -->
+    	<!-- maven-checkstyle-plugin  
     <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-checkstyle-plugin</artifactId>
@@ -53,6 +53,8 @@
 		</execution>
 	</executions>
 	</plugin>
+	-->
+	
 	<!--To support pmd goals. For example: "mvn pmd:pmd" -->
 	<plugin>
 	<groupId>org.apache.maven.plugins</groupId>
