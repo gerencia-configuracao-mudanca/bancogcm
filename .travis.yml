@@ -6,7 +6,7 @@ script:
  #- git commit -a -m "commit do travis para github"
  - git log origin/master.. --stat
 after_success:
- git tag -a build_%{build_number}
+ - git tag -a build_%{build_number}
 deploy:
   provider: heroku
   api_key: "4e82f042-5b89-4f7c-bc8e-a226ff524236"
