@@ -32,52 +32,6 @@
 	</dependencies>
 	<build>
     <plugins>
-    	<!-- maven-checkstyle-plugin  
-    <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-checkstyle-plugin</artifactId>
-	<executions>
-		<execution>
-		<id>checkstyle</id>
-		<phase>validate</phase>
-		<goals>
-			<goal>check</goal>
-			</goals>
-			<configuration>
-			<suppressionsLocation>src/main/resources/pcc-checkstyle-suppressions.xml</suppressionsLocation>
-			<configLocation>src/main/resources/greenhorn-checkstyle.xml</configLocation>
-			<encoding>UTF-8</encoding>
-			<consoleOutput>true</consoleOutput>
-			<failOnViolation>true</failOnViolation>
-			</configuration>
-		</execution>
-	</executions>
-	</plugin>
-	-->
-	
-	<!--To support pmd goals. For example: "mvn pmd:pmd" -->
-	<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-pmd-plugin</artifactId>
-	<version>3.0.1</version>
-	<configuration>
-		<targetJdk>1.7</targetJdk>
-		<printFailingErrors>true</printFailingErrors>
-		<failOnViolation>false</failOnViolation>
-		<verbose>true</verbose>
-		<rulesets>
-			<ruleset>src/main/resources/greenhorn-pmd.xml</ruleset>
-		</rulesets>
-	</configuration>
-	<executions>
-		<execution>
-			<goals>
-			<goal>check</goal>
-			</goals>
-		</execution>
-	</executions>
-	</plugin>
-	
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
